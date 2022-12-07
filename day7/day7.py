@@ -4,10 +4,25 @@
 from anytree import Node, RenderTree
 
 # Read in the input file
-with open('practice.txt', 'r') as f:
+with open('input.txt', 'r') as f:
     data = f.read().splitlines()
 
 # Part 1
+
+def is_folder(string):
+    for i in string:
+        if i.isdigit():
+            return False
+    return True
+
+def get_size(node):
+    size = 0
+    for child in node.children:
+        if child.children:
+            size += get_size(child)
+        else:
+            size += int(child.name.split(' ')[1])
+    return size
 
 # Create top node
 top = current_dir = Node('')
@@ -16,8 +31,9 @@ top = current_dir = Node('')
 for i in range(len(data)):
     # Create file tree
     if data[i] != '$ cd /':
-        if 'cd' in data[i] and 'cd ..' not in data[i]:
+        if 'cd ' in data[i] and 'cd ..' not in data[i]:
             dir = data[i].split(' ')
+            #print(dir)
             dir = Node(dir[2], parent=current_dir)
             current_dir = dir
         elif 'cd ..' in data[i]:
@@ -45,41 +61,32 @@ total_size = 0
 parent_dir_size = 0
 current_dir_size = 0
 
+below_100k = 0
+below_100k_size = 0
+
 dir_name = ''
 
 # Traverse tree for sizes
 for pre, fill, node in RenderTree(top):
-    parent = node.parent
     if node.name != '':
-        old_name = dir_name
-        #print(old_name)
-        temp = node.name.split(' ')
-        name = temp[0]
-        try:
-            # If it has a file size, it is a file
-            size = int(temp[1])
-        except:
-            # If file fails, it is a directory
-            size = 0
-            current_dir_size = 0
-            dir_name = name
-        # Add to total
-        total_size += size
-        # Make sure parent is not root
-        if dir_name != '':
-            current_dir_size += size
-        else:
-            # Add to parent dir
-            parent_dir_size += current_dir_size
-            # Reset current dir
-            current_dir_size = 0
-        print(f'Size of {old_name}: {parent_dir_size}')
-        print(f'Current dir size: {current_dir_size}')
-        print(f'Total size: {total_size}')
+        if is_folder(node.name):
+            dir_name = node.name
+            current_dir_size = get_size(node)
+            parent = node.parent
+            if parent is None:
+                parent_dir_size = current_dir_size
+            else:
+                parent_dir_size = get_size(node.parent)
+            total_size += current_dir_size
+            print(f'{dir_name} size: {current_dir_size}')
+            if current_dir_size < 100000:
+                below_100k += 1
+                below_100k_size += current_dir_size
+            # print(f'{dir_name} parent size: {parent_dir_size}')
 
-print(f'Total size of {old_name}: {current_dir_size}')
-# Print total size
-print(f'Total size: {total_size}')
+# Print sizes
+print(f'Total size of disk: {parent_dir_size}')
+print(f'{below_100k} directories below 100k, size: {below_100k_size}')
 
 # Print tree
 print('Final tree:')
