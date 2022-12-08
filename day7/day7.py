@@ -52,15 +52,12 @@ for i in range(len(data)):
                         # Swap size and name
                         temp = data[j].split(' ')
                         temp[0], temp[1] = temp[1], temp[0]
-                        # Add size to total
-                        #dir_size += int(temp[1])
                         # Make string
                         temp = ' '.join(temp)
                         file = Node(temp, parent=current_dir)
 
 # Count duplicates and remove their sizes
-dupe_list = []
-dupe_sizes = 0
+to_delete = []
 for pre, fill, node in RenderTree(top):
     if node.name != '':
         if is_folder(node.name):
@@ -70,14 +67,20 @@ for pre, fill, node in RenderTree(top):
                         child = node.children[i]
                         child2 = node.children[j]
                         if child.name == child2.name:
-                            # node.children[i].parent = None
-                            if child.name not in dupe_list:
-                                dupe_sizes += int(child.name.split(' ')[1])
-                                dupe_list.append(child.name)
-                                print(f'Removed {child.name} from {node.name}')
+                            # Append to to_delete
+                            to_delete.append(child)
 
-# Print dupe sizes
-print(f'Dupe sizes: {(dupe_sizes)}')
+# Remove duplicates from to_delete
+delete = []
+for i in to_delete:
+    # Compare as strings but append as nodes
+    if str(i) not in str(delete):
+        delete.append(i)
+
+# Remove duplicates (for the last time)
+for i in delete:
+    print(f'Removed {i.name} from {i.parent.name}')
+    i.parent = None
                             
 # Sums
 total_size = 0
@@ -105,31 +108,22 @@ for pre, fill, node in RenderTree(top):
                 parent_dir_size = current_dir_size
             else:
                 parent_dir_size = get_size(node.parent)
-            #total_size += current_dir_size
-            #print(f'{dir_name} size: {current_dir_size}')
             dir_sizes.append(current_dir_size)
             if current_dir_size < 100000:
                 below_100k += 1
                 below_100k_size += current_dir_size
         else:
-            #print(node.name)
             temp = node.name.split(' ')[1]
             total_size += int(temp)
-            #dir_sizes.append(int(temp))
-            #print(f'{node.name} size: {node.name.split(" ")[1]}')
-            #pass
-
-# Print sizes
-# total_size = 42677139
-print(f'Part 1: {below_100k_size}')
-total_size -= dupe_sizes
-print(f'Total size of disk: {total_size}')
-#print(f'{below_100k} directories below 100k, size: {below_100k_size}')
 
 # Print tree
-# print('Final tree:')
-# for pre, fill, node in RenderTree(top):
-#     print("%s%s" % (pre, node.name))
+print('Final tree:')
+for pre, fill, node in RenderTree(top):
+    print("%s%s" % (pre, node.name))
+
+# Print sizes
+print(f'Part 1: {below_100k_size}')
+print(f'Total size of disk: {total_size}')
 
 # Part 2
 
@@ -141,24 +135,18 @@ NEEDED_SPACE = 30000000
 disk_free = SYSTEM_SIZE - total_size
 print(f'Disk free: {disk_free}')
 
-# Get disk used
-# disk_used = total_size
-# print(f'Disk used: {total_size}')
-
 # Needed for update
 needed = NEEDED_SPACE - disk_free
 print(f'Needed for update: {needed}')
 
+# Get directories that could be deleted
 possible_delete_dirs = []
-
 for i in dir_sizes:
     if i >= needed:
         possible_delete_dirs.append(i)
 
-#print(f'Possible delete dirs: {possible_delete_dirs}')
 # Get smallest directory in possible delete dirs
 smallest = min(possible_delete_dirs)
 
-print(f'Smallest directory to delete: {smallest}')
-
-
+# Print answers
+print(f'Part 2: {smallest}')
