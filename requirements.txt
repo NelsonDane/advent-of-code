@@ -1,1 +1,3 @@
 anytree
+json
+numpy

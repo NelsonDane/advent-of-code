@@ -1,3 +1,3 @@
-# Advent of Code 2022
+# Advent of Code
 
-This repository contains my solutions to the [Advent of Code 2022](https://adventofcode.com/2022) challenges.
+This repository contains my incredible solutions to the [Advent of Code](https://adventofcode.com/2022) challenges.
