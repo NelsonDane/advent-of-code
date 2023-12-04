@@ -1,3 +1,4 @@
 anytree
 json
 numpy
+colorama
