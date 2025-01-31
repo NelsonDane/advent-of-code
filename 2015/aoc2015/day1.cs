@@ -3,7 +3,6 @@
 
 namespace aoc2015;
 
-// Part 1
 public class Day1 {
     private static void Part1() {
         var helpers = new HelperFunctions();
@@ -28,7 +27,7 @@ public class Day1 {
         Console.WriteLine("Resulting basement index: " + index);
     }
 
-    private static void Main() {
+    public void Run() {
         Part1();
         Part2();
     }
