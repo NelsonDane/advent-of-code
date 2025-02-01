@@ -7,9 +7,8 @@ public class Day2 {
     private static void Part1() {
         var helpers = new HelperFunctions();
         var input = helpers.ReadRealInput(day: 2, example: false);
-        var inputLines = input.Split('\n');
         var totalPaper = 0;
-        foreach (var line in inputLines) {
+        foreach (var line in input) {
             var l = Int32.Parse(line.Split('x')[0]);
             var w = Int32.Parse(line.Split('x')[1]);
             var h = Int32.Parse(line.Split('x')[2]);
@@ -23,9 +22,8 @@ public class Day2 {
     private static void Part2() {
         var helpers = new HelperFunctions();
         var input = helpers.ReadRealInput(day: 2, example: false);
-        var inputLines = input.Split('\n');
         var totalRibbon = 0;
-        foreach (var line in inputLines) {
+        foreach (var line in input) {
             var box = Array.ConvertAll(line.Split('x'), int.Parse);
             Array.Sort(box);
             var ribbon = (2 * (box[0] + box[1])) + (box[0] * box[1] * box[2]);

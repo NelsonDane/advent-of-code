@@ -8,8 +8,8 @@ public class Day1 {
         var helpers = new HelperFunctions();
         var input = helpers.ReadRealInput(day: 1, example: false);
         // ( is Up, ) is Down
-        var numUp = input.Count(c => c == '(');
-        var numDown = input.Count(c => c == ')');
+        var numUp = input[0].Count(c => c == '(');
+        var numDown = input[0].Count(c => c == ')');
         Console.WriteLine("Resulting Floor: " + (numUp - numDown));
     }
 
@@ -18,7 +18,7 @@ public class Day1 {
         var input = helpers.ReadRealInput(day: 1, example: false);
         var floor = 0;
         var index = 1;
-        foreach(var c in input) {
+        foreach(var c in input[0]) {
             if (c == '(') floor++;
             if (c == ')') floor--;
             if (floor == -1) break;

@@ -1,17 +1,17 @@
 namespace aoc2015;
 
 public class HelperFunctions {
-    public string ReadRealInput(int day, bool example = false) {
+    public string[] ReadRealInput(int day, bool example = false) {
         try {
             var basePath = Directory.GetCurrentDirectory();
             var fullPath =
                 Path.GetFullPath(Path.Combine(basePath,
                     $"../../../../../aoc-inputs/2015/day{day}/{(example ? "example.txt" : "input.txt")}"));
-            return File.ReadAllText(fullPath);
+            return (File.ReadAllText(fullPath)).Split('\n');
         }
         catch (Exception e) {
             Console.WriteLine(e);
-            return "";
+            return [];
         }
     }
 
@@ -26,6 +26,10 @@ public class HelperFunctions {
             case 2:
                 var day2 = new Day2();
                 day2.Run();
+                break;
+            case 3:
+                var day3 = new Day3();
+                day3.Run();
                 break;
             default:
                 return;
