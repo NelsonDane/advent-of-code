@@ -18,6 +18,11 @@ This repository contains my solutions to the [Advent of Code](https://adventofco
 <!--- advent_readme_stars_2021 table --->
 
 <!--- advent_readme_stars_2020 table --->
+## 2020 Results
+
+| Day | Solution | Part 1 | Part 2 |
+| :---: | :---: | :---: | :---: |
+<!--- advent_readme_stars_2020 table --->
 
 <!--- advent_readme_stars_2019 table --->
 ## 2019 Results
