@@ -26,6 +26,11 @@ This repository contains my solutions to the [Advent of Code](https://adventofco
 <!--- advent_readme_stars_2017 table --->
 
 <!--- advent_readme_stars_2016 table --->
+## 2016 Results
+
+| Day | Solution | Part 1 | Part 2 |
+| :---: | :---: | :---: | :---: |
+<!--- advent_readme_stars_2016 table --->
 
 <!--- advent_readme_stars_2015 table --->
 ## 2015 Results
