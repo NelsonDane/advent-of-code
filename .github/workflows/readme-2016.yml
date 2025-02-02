@@ -1,12 +1,12 @@
-name: Update README 2015 ⭐
+name: Update README 2016 ⭐
 on:
   push:
     paths:
-      - 2015/**
+      - 2016/**
   workflow_dispatch:
 
 jobs:
-  readme-2015:
+  readme-2017:
     runs-on: ubuntu-latest
     permissions:
       contents: write
@@ -16,9 +16,9 @@ jobs:
         with:
           userId: ${{ secrets.AOC_USER_ID }}
           sessionCookie: ${{ secrets.AOC_SESSION }}
-          year: 2015
-          tableMarker: '<!--- advent_readme_stars_2015 table --->'
-          solutionLocations: '{yyyy}/aoc2015/day{dd}.cs'
+          year: 2016
+          tableMarker: '<!--- advent_readme_stars_2016 table --->'
+          solutionLocations: '{yyyy}/aoc2016/day{dd}.cs'
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: Update README stars of 2015
+          commit_message: Update README stars of 2016
