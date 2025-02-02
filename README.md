@@ -22,6 +22,11 @@ This repository contains my solutions to the [Advent of Code](https://adventofco
 <!--- advent_readme_stars_2019 table --->
 
 <!--- advent_readme_stars_2018 table --->
+## 2018 Results
+
+| Day | Solution | Part 1 | Part 2 |
+| :---: | :---: | :---: | :---: |
+<!--- advent_readme_stars_2018 table --->
 
 <!--- advent_readme_stars_2017 table --->
 ## 2017 Results
