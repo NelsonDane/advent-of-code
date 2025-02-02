@@ -17,22 +17,16 @@ public class HelperFunctions {
 
     public static void Main() {
         Console.Write("Day to Run: ");
-        var day = Int32.Parse(Console.ReadLine());
-        switch (day) {
-            case 1:
-                var day1 = new Day1();
-                day1.Run();
-                break;
-            case 2:
-                var day2 = new Day2();
-                day2.Run();
-                break;
-            case 3:
-                var day3 = new Day3();
-                day3.Run();
-                break;
-            default:
-                return;
+        if (int.TryParse(Console.ReadLine(), out var day)) {
+            var days = new Dictionary<int, Action> {
+                { 1, () => new Day1().Run() },
+                { 2, () => new Day2().Run() },
+                { 3, () => new Day3().Run() },
+                { 4, () => new Day4().Run() }
+            };
+            if (days.TryGetValue(day, out var action)) {
+                action(); // Run the corresponding day's logic
+            }
         }
     }
 }
