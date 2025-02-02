@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - 2015/**
+      - .github/workflows/readme-2015.yml
   workflow_dispatch:
 
 jobs:
