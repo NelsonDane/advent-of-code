@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - 2022/**
+      - .github/workflows/readme-2022.yml
   workflow_dispatch:
 
 jobs:
@@ -18,7 +19,7 @@ jobs:
           sessionCookie: ${{ secrets.AOC_SESSION }}
           year: 2022
           tableMarker: '<!--- advent_readme_stars_2022 table --->'
-          solutionLocations: '{yyyy}/day{dd}/day{dd}/day{dd}.py'
+          solutionLocations: '{yyyy}/day{d}/day{d}.py'
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update README stars of 2020

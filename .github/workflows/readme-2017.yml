@@ -3,6 +3,7 @@ on:
   push:
     paths:
       - 2017/**
+      - .github/workflows/readme-2017.yml
   workflow_dispatch:
 
 jobs:
@@ -18,7 +19,7 @@ jobs:
           sessionCookie: ${{ secrets.AOC_SESSION }}
           year: 2017
           tableMarker: '<!--- advent_readme_stars_2017 table --->'
-          solutionLocations: '{yyyy}/aoc2015/day{dd}.cs'
+          solutionLocations: '{yyyy}/aoc2015/day{d}.cs'
       - uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: Update README stars of 2017
