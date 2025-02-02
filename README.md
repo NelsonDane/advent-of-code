@@ -7,6 +7,19 @@ This repository contains my solutions to the [Advent of Code](https://adventofco
 <!--- advent_readme_stars_2024 table --->
 
 <!--- advent_readme_stars_2023 table --->
+## 2023 Results
+
+| Day | Solution | Part 1 | Part 2 |
+| :---: | :---: | :---: | :---: |
+| [Day 1](https://adventofcode.com/2023/day/1) | [day1.py](2023/day1/day1.py) | ⭐ | ⭐ |
+| [Day 2](https://adventofcode.com/2023/day/2) | [day2.py](2023/day2/day2.py) | ⭐ | ⭐ |
+| [Day 3](https://adventofcode.com/2023/day/3) | [day3.py](2023/day3/day3.py) | ⭐ | ⭐ |
+| [Day 4](https://adventofcode.com/2023/day/4) | [day4.py](2023/day4/day4.py) | ⭐ | ⭐ |
+| [Day 5](https://adventofcode.com/2023/day/5) | [day5.py](2023/day5/day5.py) | ⭐ | ⭐ |
+| [Day 6](https://adventofcode.com/2023/day/6) | [day6.py](2023/day6/day6.py) | ⭐ | ⭐ |
+| [Day 7](https://adventofcode.com/2023/day/7) | [day7.py](2023/day7/day7.py) | ⭐ | ⭐ |
+| [Day 8](https://adventofcode.com/2023/day/8) |  | ⭐ | ⭐ |
+<!--- advent_readme_stars_2023 table --->
 
 <!--- advent_readme_stars_2022 table --->
 ## 2022 Results
