@@ -6,7 +6,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  aoc-readme:
+  readme-2015:
     runs-on: ubuntu-latest
     permissions:
       contents: write
