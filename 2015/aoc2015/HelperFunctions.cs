@@ -23,7 +23,8 @@ public class HelperFunctions {
                 { 2, () => new Day2().Run() },
                 { 3, () => new Day3().Run() },
                 { 4, () => new Day4().Run() },
-                { 5, () => new Day5().Run() }
+                { 5, () => new Day5().Run() },
+                { 6, () => new Day6().Run() }
             };
             if (days.TryGetValue(day, out var action)) {
                 action(); // Run the corresponding day's logic
