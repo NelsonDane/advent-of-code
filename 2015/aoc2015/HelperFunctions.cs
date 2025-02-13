@@ -17,20 +17,20 @@ public class HelperFunctions {
 
     public static void Main() {
         Console.Write("Day to Run: ");
-        if (int.TryParse(Console.ReadLine(), out var day)) {
-            var days = new Dictionary<int, Action> {
-                { 1, () => new Day1().Run() },
-                { 2, () => new Day2().Run() },
-                { 3, () => new Day3().Run() },
-                { 4, () => new Day4().Run() },
-                { 5, () => new Day5().Run() },
-                { 6, () => new Day6().Run() },
-                { 7, () => new Day7().Run() },
-                { 8, () => new Day8().Run() }
-            };
-            if (days.TryGetValue(day, out var action)) {
-                action(); // Run the corresponding day's logic
-            }
+        if (!int.TryParse(Console.ReadLine(), out var day)) return;
+        var days = new Dictionary<int, Action> {
+            { 1, () => new Day1().Run() },
+            { 2, () => new Day2().Run() },
+            { 3, () => new Day3().Run() },
+            { 4, () => new Day4().Run() },
+            { 5, () => new Day5().Run() },
+            { 6, () => new Day6().Run() },
+            { 7, () => new Day7().Run() },
+            { 8, () => new Day8().Run() },
+            { 9, () => new Day9().Run() }
+        };
+        if (days.TryGetValue(day, out var action)) {
+            action(); // Run the corresponding day's logic
         }
     }
 }
