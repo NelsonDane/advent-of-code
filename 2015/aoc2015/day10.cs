@@ -1,3 +1,6 @@
+// Nelson Dane
+// Advent of Code 2015 Day 10
+
 using System.Text;
 
 namespace aoc2015;
