@@ -94,6 +94,12 @@ This repository contains my solutions to the [Advent of Code](https://adventofco
 | [Day 4](https://adventofcode.com/2015/day/4) | [day4.cs](2015/aoc2015/day4.cs) | ⭐ | ⭐ |
 | [Day 5](https://adventofcode.com/2015/day/5) | [day5.cs](2015/aoc2015/day5.cs) | ⭐ | ⭐ |
 | [Day 6](https://adventofcode.com/2015/day/6) | [day6.cs](2015/aoc2015/day6.cs) | ⭐ | ⭐ |
+| [Day 7](https://adventofcode.com/2015/day/7) | [day7.cs](2015/aoc2015/day7.cs) | ⭐ | ⭐ |
+| [Day 8](https://adventofcode.com/2015/day/8) | [day8.cs](2015/aoc2015/day8.cs) | ⭐ | ⭐ |
+| [Day 9](https://adventofcode.com/2015/day/9) | [day9.cs](2015/aoc2015/day9.cs) | ⭐ | ⭐ |
+| [Day 10](https://adventofcode.com/2015/day/10) | [day10.cs](2015/aoc2015/day10.cs) | ⭐ | ⭐ |
+| [Day 11](https://adventofcode.com/2015/day/11) | [day11.cs](2015/aoc2015/day11.cs) | ⭐ | ⭐ |
+| [Day 12](https://adventofcode.com/2015/day/12) | [day12.cs](2015/aoc2015/day12.cs) | ⭐ | ⭐ |
 <!--- advent_readme_stars_2015 table --->
 
 *\* Table Genreated by [@miam-miam/advent-readme-stars](https://github.com/miam-miam/advent-readme-stars)*
